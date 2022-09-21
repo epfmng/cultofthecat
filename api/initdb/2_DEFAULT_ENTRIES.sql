@@ -8,3 +8,14 @@ INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (7, 'Gaston'
 INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (8, 'Gisèle', 'Detable', null);
 INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (9, 'Thomas', 'Ouaque', null);
 INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (10, 'Sacha', 'Telfrize', 23);
+
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (1, 'Paul',    'white',            'Unknown', 4,  '/', 'female');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (2, 'Harry',   'white',            'Unknown', 4,  '/', 'male');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (3, 'Alain',   'black',            'Unknown', 4,  '/', 'female');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (4, 'Elvire',  'brown',            'Unknown', 4,  '/', 'male');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (5, 'Laurent', 'yellow',           'Unknown', 6,  '/', 'female');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (6, 'Homer',   'grey',             'Unknown', 6,  '/', 'male');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (7, 'Gaston',  'ginger',           'Unknown', 6,  '/', 'female');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (8, 'Gisèle',  'black',            'Unknown', 6,  '/', 'male');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (9, 'Thomas',  'black and white',  'Unknown', 2,  '/', 'female');
+INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (10, 'Sacha',  'brown and black',  'Unknown', 2,  '/', 'male');
