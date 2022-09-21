@@ -20,3 +20,15 @@ create table kittens
     imagepath TEXT not null,
     sex TEXT not null
 );
+
+create table reviews
+(
+    id bigint auto_increment,
+    constraint reviews_pk
+        primary key (id),
+    date TEXT not null,
+    rating int null,
+    text TEXT not null,
+    userid LONG null,
+    kittenid LONG null
+);
