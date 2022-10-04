@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
 import { AddUserComponent } from './pages/add-user/add-user.component';
+import { ListKittensComponent } from './pages/list-kittens/list-kittens.component';
+import { AddKittenComponent } from './pages/add-kitten/add-kitten.component';
 import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
@@ -12,7 +14,9 @@ import {FormsModule} from '@angular/forms';
   declarations: [
     AppComponent,
     ListUsersComponent,
-    AddUserComponent
+    AddUserComponent,
+    ListKittensComponent,
+    AddKittenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">Fur</th>
+      <th scope="col">Race</th>
+      <th scope="col">Age</th>
+      <th scope="col">Image</th>
+      <th scope="col">Sex</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let kitten of kittens">
+      <td>{{kitten.id}}</td>
+      <td>{{kitten.firstName}}</td>
+      <td>{{kitten.fur}}</td>
+      <td>{{kitten.race}}</td>
+      <td>{{kitten.age}}</td>
+      <td>{{kitten.imagepath}}</td>
+      <td>{{kitten.sex}}</td>
+      <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(kitten.id)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
