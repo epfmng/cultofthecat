@@ -27,6 +27,6 @@ export class AddUserComponent implements OnInit {
 
     this.userService.addUser(user).subscribe(user => console.log(user));
 
-    setTimeout(()=>this.router.navigateByUrl('/'), 1000)
+    setTimeout(()=>this.router.navigateByUrl('/users'), 1000)
   }
 }

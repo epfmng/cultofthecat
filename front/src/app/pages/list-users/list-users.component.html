@@ -6,6 +6,7 @@
       <th scope="col">FirstName</th>
       <th scope="col">LastName</th>
       <th scope="col">Age</th>
+      <th scope="col">Email</th>
       <th scope="col"></th>
     </tr>
     </thead>
@@ -15,6 +16,7 @@
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.age}}</td>
+      <td>{{user.email}}</td>
       <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(user.id)">Delete</button></td>
     </tr>
     </tbody>
