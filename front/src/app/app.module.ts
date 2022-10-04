@@ -9,6 +9,8 @@ import { ListKittensComponent } from './pages/list-kittens/list-kittens.componen
 import { AddKittenComponent } from './pages/add-kitten/add-kitten.component';
 import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {AddReviewComponent} from './pages/add-review/add-review.component';
+import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {FormsModule} from '@angular/forms';
     ListUsersComponent,
     AddUserComponent,
     ListKittensComponent,
-    AddKittenComponent
+    AddKittenComponent,
+    ListReviewsComponent,
+    AddReviewComponent
   ],
   imports: [
     BrowserModule,
