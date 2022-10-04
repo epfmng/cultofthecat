@@ -1,13 +1,13 @@
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (1, 'Paul', 'Harrohide', 20);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (2, 'Harry', 'Covert', 25);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (3, 'Alain', 'Posteur', null);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (4, 'Elvire', 'Debord', null);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (5, 'Laurent', 'Barre', 41);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (6, 'Homer', 'Cipourtoux', 28);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (7, 'Gaston', 'Laplouz', null);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (8, 'Gisèle', 'Detable', null);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (9, 'Thomas', 'Ouaque', null);
-INSERT INTO defaultdb.users (id, first_name, last_name, age) VALUES (10, 'Sacha', 'Telfrize', 23);
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (1, 'Paul',    'Harrohide',   20,   'pharrohide@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (2, 'Harry',   'Covert',      25,   'hcovert@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (3, 'Alain',   'Posteur',     null, 'aposteur@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (4, 'Elvire',  'Debord',      null, 'edebord@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (5, 'Laurent', 'Barre',       41,   'lbarre@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (6, 'Homer',   'Cipourtoux',  28,   'hcipourtoux@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (7, 'Gaston',  'Laplouz',     null, 'glaplouz@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (8, 'Gisèle',  'Detable',     null, 'gdetable@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (9, 'Thomas',  'Ouaque',      null, 'touaque@epf.fr');
+INSERT INTO defaultdb.users (id, first_name, last_name, age, email) VALUES (10, 'Sacha',  'Telfrize',    23,   'stelfrize@epf.fr');
 
 INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (1, 'Paul',    'white',            'Unknown', 4,  '/', 'female');
 INSERT INTO defaultdb.kittens (id, first_name, fur, race, age, imagepath, sex) VALUES (2, 'Harry',   'white',            'Unknown', 4,  '/', 'male');

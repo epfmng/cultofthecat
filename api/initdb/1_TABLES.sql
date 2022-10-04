@@ -6,7 +6,8 @@ create table users
         primary key (id),
     first_name VARCHAR(255) not null,
     last_name VARCHAR(255) not null,
-    age int null
+    age int null,
+    email VARCHAR(255)
 );
 
 drop table kittens;
