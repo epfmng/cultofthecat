@@ -25,12 +25,13 @@ export class HomeComponent implements OnInit {
 
 
     loadKitten(): void {
+        let idKitten
         if (this.kittenPrint != null) {
             do {
-                var idKitten = this.kittens[this.randNum()].id;
+                idKitten = this.kittens[this.randNum()].id;
             } while (idKitten == this.kittenPrint.id);
         } else {
-            var idKitten = this.kittens[this.randNum()].id;
+            idKitten = this.kittens[this.randNum()].id;
         }
 
         this.kittenService.getKitten(idKitten)
@@ -41,8 +42,8 @@ export class HomeComponent implements OnInit {
     }
 
     randNum(): number {
-        var min = 1;
-        var max = this.kittens.length;
+        let min = 1;
+        let max = this.kittens.length;
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
