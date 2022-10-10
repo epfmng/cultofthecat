@@ -6,6 +6,7 @@ import {ListKittensComponent} from './pages/list-kittens/list-kittens.component'
 import {AddKittenComponent} from './pages/add-kitten/add-kitten.component';
 import {AddReviewComponent} from './pages/add-review/add-review.component';
 import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component';
+import {LoginComponent} from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: ListUsersComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'kittens', component: ListKittensComponent },
   { path: 'add-kitten', component: AddKittenComponent },
   { path: 'list-review', component: ListReviewsComponent },
-  { path: 'add-review', component: AddReviewComponent }];
+  { path: 'add-review', component: AddReviewComponent },
+  { path: 'login', component: LoginComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

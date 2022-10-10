@@ -11,6 +11,7 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {AddReviewComponent} from './pages/add-review/add-review.component';
 import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component';
+import {LoginComponent} from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component'
     ListKittensComponent,
     AddKittenComponent,
     ListReviewsComponent,
-    AddReviewComponent
+    AddReviewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
