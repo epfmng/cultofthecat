@@ -37,4 +37,23 @@ public class UserController {
         this.userDAO.deleteById(id);
     }
 
+    @GetMapping("/{email}")
+    public User checkEmailUser(@PathVariable String email) {
+        Iterable<User> it = this.userDAO.findAll();
+        List<User> users = new ArrayList<>();
+        it.forEach(e -> users.add(e));
+
+        User userCheck = new User();
+        for (User user : users) {
+            if(user.getEmail().equals(email)) {
+                userCheck.setId(user.getId());
+                userCheck.setFirstName(user.getFirstName());
+                userCheck.setLastName(user.getLastName());
+                userCheck.setAge(user.getAge());
+                userCheck.setEmail(email);
+            }
+        }
+        return userCheck;
+    }
+
 }
