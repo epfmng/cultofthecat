@@ -1,11 +1,16 @@
 <ng-container *ngIf="kittenPrint">
 <div>
-<h2>Chaton : {{kittenPrint.firstName}}</h2>
+<h2>{{kittenPrint.firstName}}</h2>
 <div>
 Image de chaton {{kittenPrint.imagepath}}
-
 </div>
-<!--    <button type="button" (click)="judgeKitten()" )>juger el gato</button>-->
-<!--    <button type="button" (click)="nextKitten()" )>Boring next</button>-->
+    <div>
+        <h3> Race : {{kittenPrint.race}} </h3>
+        <h3> Sex : {{kittenPrint.sex}}</h3>
+        <h3> Fourrure : {{kittenPrint.fur}}</h3>
+        <h3> Age : {{kittenPrint.age}}</h3>
+    </div>
+    <button (click)="judgeKitten()">Juger el gato</button>
+    <button (click)="nextKitten()">Boring next</button>
 </div>
 </ng-container>
