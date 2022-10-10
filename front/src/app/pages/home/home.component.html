@@ -2,7 +2,7 @@
 <div>
 <h2>{{kittenPrint.firstName}}</h2>
 <div>
-Image de chaton {{kittenPrint.imagepath}}
+    <img src="{{kittenPrint.imagepath}}" alt="{{kittenPrint.firstName}}" width="300" height="400">
 </div>
     <div>
         <h3> Race : {{kittenPrint.race}} </h3>
@@ -10,7 +10,8 @@ Image de chaton {{kittenPrint.imagepath}}
         <h3> Fourrure : {{kittenPrint.fur}}</h3>
         <h3> Age : {{kittenPrint.age}}</h3>
     </div>
-    <button (click)="judgeKitten()">Juger el gato</button>
+<!--    <button routerLink="/Judging/{{kittenPrint.id}}">Juger el gato</button>-->
+    <button routerLink="/kittens">Juger el gato</button>
     <button (click)="nextKitten()">Boring next</button>
 </div>
 </ng-container>

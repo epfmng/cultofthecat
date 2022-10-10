@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Kitten} from '../../models/kitten.model'
 import {KittenService} from '../../services/kitten.service';
-import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-home',
@@ -13,7 +12,7 @@ export class HomeComponent implements OnInit {
     kittens: Kitten[];
     kittenPrint: Kitten;
 
-    constructor(private kittenService: KittenService, private router : Router) {
+    constructor(private kittenService: KittenService) {
     }
 
     ngOnInit(): void {
@@ -51,10 +50,6 @@ export class HomeComponent implements OnInit {
 
     nextKitten(): void {
         this.loadKitten();
-    }
-
-    judgeKitten(): void{
-        this.router.navigateByUrl('kittens')
     }
 
 }
