@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import { defaultsDeep } from 'lodash';
 import {LoginService} from '../../services/login.service';
 import {Router} from '@angular/router';
-import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
 
 @Component({
@@ -12,23 +10,38 @@ import {User} from '../../models/user.model';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  constructor(private loginService: LoginService, private router: Router) { }
 
-  userTestVisu: User;
-  constructor(private loginService: LoginService, private router: Router, private userService: UserService) { }
+  userLogged: User;
+
+  displayStyle = 'none';
 
   ngOnInit() {
+
   }
 
   onSubmit(ngForm: NgForm) {
     console.log(ngForm);
     const emailToCheck = ngForm.form.value.email;
-    if( emailToCheck !== '') {
-      this.loginService.checkEmailUser(emailToCheck).subscribe(user => console.log(user));
-      this.loginService.checkEmailUser(emailToCheck).subscribe(user => this.userTestVisu = user)};
-    if(this.userTestVisu.id != null) {
 
+    let newUserLogged = new User();
+
+    if( emailToCheck !== '') {
+      // this.loginService.checkEmailUser(emailToCheck).subscribe(user => console.log(user));
+      this.loginService.checkEmailUser(emailToCheck).subscribe(
+          user => {newUserLogged = user;
+            if( newUserLogged.id != null) {
+              this.displayStyle = 'block';
+              this.userLogged = newUserLogged;
+              setTimeout(()=> this.closePopup(), 2000);
+              setTimeout(()=>this.router.navigateByUrl('/'), 1000);
+            }
+          }
+      );
     }
   }
 
-// setTimeout(()=>this.router.navigateByUrl('/'), 1000)
+  closePopup() {
+    this.displayStyle = 'none';
+  }
 }
