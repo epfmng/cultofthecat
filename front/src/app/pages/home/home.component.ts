@@ -10,19 +10,32 @@ import {KittenService} from '../../services/kitten.service';
 })
 export class HomeComponent implements OnInit {
 
-  kittens : Array<Kitten>;
+  kittens : Kitten[];
   kittenPrint : Kitten;
   constructor(private kittenService : KittenService) { }
 
   ngOnInit(): void {
-    this.kittenService.getKittens().subscribe(kittens => this.kittens = kittens);
-    var idKitten=this.kittens[this.randNum()].id;
-    this.loadKitten(idKitten);
+    this.kittenService.getKittens().subscribe(kittens => {
+      this.kittens = kittens;
+      console.log(this.kittens)
+        this.loadKitten();
+    });
   }
 
-  loadKitten(idKitten): void{
+
+   loadKitten(): void{
+    if (this.kittenPrint!= null){
+    do {
+      var newId = this.kittens[this.randNum()].id;
+    }while (newId == this.kittenPrint.id);
+    }
+
+    var idKitten=this.kittens[this.randNum()].id;
     this.kittenService.getKitten(idKitten)
-        .subscribe(kitten => this.kittenPrint = kitten);
+        .subscribe(kitten => {
+            this.kittenPrint = kitten
+            console.log(this.kittenPrint);
+        });
   }
 
   randNum(): number{
@@ -34,10 +47,7 @@ export class HomeComponent implements OnInit {
   }
 
   nextKitten(): void{
-    do {
-      var newId = this.kittens[this.randNum()].id;
-    }while (newId == this.kittenPrint.id);
-    this.loadKitten(newId);
+    this.loadKitten();
   }
 
   judgeKitten(): Kitten{
