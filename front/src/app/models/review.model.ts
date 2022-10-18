@@ -1,14 +1,19 @@
-import { defaultsDeep } from 'lodash';
+import {defaultsDeep} from 'lodash';
 
 export class Review {
-  id: number;
-  date: string;
-  rating: number;
-  text: string;
-  userid: number;
-  kittenid: number;
+    id: number | null;
+    date: string;
+    rating: number;
+    text: string;
+    userid: number;
+    kittenid: number;
 
-  constructor(review?: Partial<Review>) {
-    defaultsDeep(this, review);
-  }
+    constructor(id: number | null, date: string, rating: number, text: string, userid: number, kittenid: number) {
+        this.id = id;
+        this.date = date;
+        this.rating = rating;
+        this.text = text;
+        this.userid = userid;
+        this.kittenid = kittenid;
+    }
 }

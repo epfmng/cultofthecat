@@ -1,32 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {UserService} from '../../services/user.service';
-import { defaultsDeep } from 'lodash';
+import {defaultsDeep} from 'lodash';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.scss']
+    selector: 'app-add-user',
+    templateUrl: './add-user.component.html',
+    styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
+    constructor(private userService: UserService, private router: Router) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  onSubmit(ngForm: NgForm) {
-    console.log(ngForm);
-    const user = defaultsDeep({
-      id: null,
-      firstName: ngForm.form.value.firstName,
-      lastName: ngForm.form.value.lastName,
-      age: ngForm.form.value.age,
-    });
+    onSubmit(ngForm: NgForm) {
+        console.log(ngForm);
+        const user = defaultsDeep({
+            id: null,
+            firstName: ngForm.form.value.firstName,
+            lastName: ngForm.form.value.lastName,
+            age: ngForm.form.value.age,
+        });
 
-    this.userService.addUser(user).subscribe(user => console.log(user));
+        this.userService.addUser(user).subscribe(userResponse => console.log(userResponse));
 
-    setTimeout(()=>this.router.navigateByUrl('/users'), 1000)
-  }
+        setTimeout(() => this.router.navigateByUrl('/users'), 1000)
+    }
 }

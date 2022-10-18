@@ -1,35 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ReviewService} from '../../services/review.service';
-import { defaultsDeep } from 'lodash';
 import {Router} from '@angular/router';
+import {Review} from '../../models/review.model';
+import {UserService} from '../../services/user.service';
 
 @Component({
-  selector: 'app-add-review',
-  templateUrl: './add-review.component.html',
-  styleUrls: ['./add-review.component.scss']
+    selector: 'app-add-review',
+    templateUrl: './add-review.component.html',
+    styleUrls: ['./add-review.component.scss']
 })
 export class AddReviewComponent implements OnInit {
 
-  constructor(private reviewService: ReviewService, private router: Router) { }
+    constructor(private reviewService: ReviewService, private router: Router, private userService: UserService) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  onSubmit(ngForm: NgForm) {
-    console.log(ngForm);
-    const review = defaultsDeep({
-      id: null,
-      firstName: ngForm.form.value.firstName,
-      fur: ngForm.form.value.fur,
-      race: ngForm.form.value.race,
-      age: ngForm.form.value.age,
-      // imagepath : ngForm,
-      sex : ngForm.form.value.sex,
-    });
+    onSubmit(ngForm: NgForm) {
+        console.log(ngForm);
+        const idUser = this.userService.userId;
+        const newReview = new Review(
+            null,
+            '12/03/2000',
+            ngForm.form.value.rating,
+            ngForm.form.value.text,
+            idUser,
+            4
+        );
 
-    this.reviewService.addReview(review).subscribe(review => console.log(review));
+        this.reviewService.addReview(newReview).subscribe(review => console.log(review));
 
-    setTimeout(()=>this.router.navigateByUrl('/'), 1000)
-  }
+        setTimeout(() => this.router.navigateByUrl('/'), 1000)
+    }
 }
