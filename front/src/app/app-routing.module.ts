@@ -7,7 +7,7 @@ import {AddKittenComponent} from './pages/add-kitten/add-kitten.component';
 import {AddReviewComponent} from './pages/add-review/add-review.component';
 import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component';
 import {LoginComponent} from './pages/login/login.component';
-import {HomeComponent} from "./pages/home/home.component";
+import {HomeComponent} from './pages/home/home.component';
 
 
 const routes: Routes = [
