@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'list-review', component: ListReviewsComponent },
   { path: 'add-review', component: AddReviewComponent },
   { path: 'login', component: LoginComponent }];
-];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
