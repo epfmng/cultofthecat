@@ -20,6 +20,9 @@ export class KittenService {
   getKittens(): Observable<Kitten[]> {
     return this.http.get<Kitten[]>(`${this.url}/kittens`).pipe(timeout(10000));
   }
+  getKitten(id: number): Observable<Kitten> {
+    return this.http.get<Kitten>(`${this.url}/kittens/${id}`).pipe(timeout(10000));
+  }
 
   addKitten(user: Kitten): Observable<Kitten> {
     return this.http.post<any>(`${this.url}/kittens`, user).pipe(timeout(10000));

@@ -7,9 +7,11 @@ import {AddKittenComponent} from './pages/add-kitten/add-kitten.component';
 import {AddReviewComponent} from './pages/add-review/add-review.component';
 import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component';
 import {LoginComponent} from './pages/login/login.component';
+import {HomeComponent} from "./pages/home/home.component";
+
 
 const routes: Routes = [
-  { path: '', component: ListUsersComponent },
+  { path: '', component: HomeComponent },
   { path: 'users', component: ListUsersComponent },
   { path: 'add-user', component: AddUserComponent },
   { path: 'kittens', component: ListKittensComponent },
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'list-review', component: ListReviewsComponent },
   { path: 'add-review', component: AddReviewComponent },
   { path: 'login', component: LoginComponent }];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

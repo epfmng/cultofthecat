@@ -10,13 +10,13 @@ import {KittenService} from '../../services/kitten.service';
 })
 export class HomeComponent implements OnInit {
 
-  kittens : Kitten[];
+  kittens : Array<Kitten>;
   kittenPrint : Kitten;
   constructor(private kittenService : KittenService) { }
 
   ngOnInit(): void {
     this.kittenService.getKittens().subscribe(kittens => this.kittens = kittens);
-    var idKitten=this.kittens[this.randNum()].getId;
+    var idKitten=this.kittens[this.randNum()].id;
     this.loadKitten(idKitten);
   }
 
@@ -34,7 +34,14 @@ export class HomeComponent implements OnInit {
   }
 
   nextKitten(): void{
-    this.loadKitten(idKitten);
+    do {
+      var newId = this.kittens[this.randNum()].id;
+    }while (newId == this.kittenPrint.id);
+    this.loadKitten(newId);
+  }
+
+  judgeKitten(): Kitten{
+    return this.kittenPrint;
   }
 
 }
