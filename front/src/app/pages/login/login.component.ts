@@ -28,8 +28,7 @@ export class LoginComponent implements OnInit {
         let newUserLogged = new User();
 
         if (emailToCheck !== '') {
-            // this.loginService.checkEmailUser(emailToCheck).subscribe(user => console.log(user));
-            this.loginService.checkEmailUser(emailToCheck).subscribe(
+            this.userService.checkEmailUser(emailToCheck).subscribe(
                 user => {
                     newUserLogged = user;
                     if (newUserLogged.id != null) {

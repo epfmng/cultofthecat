@@ -29,4 +29,8 @@ export class UserService {
         return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
     }
 
+    checkEmailUser(email: string): Observable<User> {
+        return this.http.get<User>(`${this.url}/users/${email}`).pipe(timeout(10000));
+    }
+
 }

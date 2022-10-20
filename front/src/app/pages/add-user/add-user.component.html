@@ -26,6 +26,7 @@
           </label>
           <input type="text" id="email" class="form-control" name="email" ngModel>
         </div>
+        <label id="emailVerification" [ngStyle]="{'display':displayStyle}" > Email already exists.</label>
         <button class="btn btn-primary" type="submit">Ajouter</button>
       </form>
     </div>

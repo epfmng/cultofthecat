@@ -14,6 +14,8 @@ export class AddUserComponent implements OnInit {
     constructor(private userService: UserService, private router: Router) {
     }
 
+    displayStyle = 'none';
+
     ngOnInit() {
     }
 
@@ -24,10 +26,18 @@ export class AddUserComponent implements OnInit {
             firstName: ngForm.form.value.firstName,
             lastName: ngForm.form.value.lastName,
             age: ngForm.form.value.age,
+            email: ngForm.form.value.email,
         });
 
-        this.userService.addUser(user).subscribe(userResponse => console.log(userResponse));
-
-        setTimeout(() => this.router.navigateByUrl('/users'), 1000)
+        this.userService.checkEmailUser(user.email).subscribe(
+            userExist => {
+                if (userExist.id == null) {
+                    this.userService.addUser(user).subscribe(userResponse => console.log(userResponse));
+                    setTimeout(() => this.router.navigateByUrl('/users'), 1000);
+                } else {
+                    this.displayStyle = 'block';
+                }
+            }
+        );
     }
 }
