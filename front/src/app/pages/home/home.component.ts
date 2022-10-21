@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
     }
 
     randNum(): number {
-        let min = 1;
+        let min = 0;
         let max = this.kittens.length;
         min = Math.ceil(min);
         max = Math.floor(max);
