@@ -26,19 +26,22 @@ export class HomeComponent implements OnInit {
 
     loadKitten(): void {
         let idKitten
+        let randIndex = this.randNum()
         if (this.kittenPrint != null) {
             do {
-                idKitten = this.kittens[this.randNum()].id;
+                randIndex = this.randNum();
+                idKitten = this.kittens[randIndex].id;
             } while (idKitten == this.kittenPrint.id);
         } else {
-            idKitten = this.kittens[this.randNum()].id;
+            randIndex = this.randNum();
         }
-
-        this.kittenService.getKitten(idKitten)
-            .subscribe(kitten => {
-                this.kittenPrint = kitten
-                console.log(this.kittenPrint);
-            });
+        //
+        // this.kittenService.getKitten(idKitten)
+        //     .subscribe(kitten => {
+        //         this.kittenPrint = kitten
+        //         console.log(this.kittenPrint);
+        //     });
+        this.kittenPrint = this.kittens[randIndex];
     }
 
     randNum(): number {

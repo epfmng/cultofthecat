@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+//import java.util.NoSuchElementException;
+//import java.util.Optional;
 
 @RestController
 @RequestMapping("/kittens")
@@ -29,11 +29,10 @@ public class KittenController {
         return kittens;
     }
 
-    @GetMapping("/{id}")
-    public Kitten getKitten(@PathVariable Long id) {
-        Kitten kitten = this.kittenDAO.findById(id).orElseThrow(() -> new NoSuchElementException("Chaton non trouvé"));
-        return kitten;
-    }
+//    @GetMapping("/{id}")
+//    public Kitten getKitten(@PathVariable Long id) {
+//        return this.kittenDAO.findById(id).orElseThrow(() -> new NoSuchElementException("Chaton non trouvé"));
+//    }
 
     @PostMapping()
     public Kitten addKitten(@RequestBody Kitten kitten) {
