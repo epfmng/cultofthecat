@@ -14,13 +14,15 @@ export class AddUserComponent implements OnInit {
     constructor(private userService: UserService, private router: Router) {
     }
 
-    displayStyle = 'none';
+    displayEmailVerified = 'none';
+    displayNullField = 'none';
 
     ngOnInit() {
     }
 
     onSubmit(ngForm: NgForm) {
         console.log(ngForm);
+
         const user = defaultsDeep({
             id: null,
             firstName: ngForm.form.value.firstName,
@@ -29,15 +31,20 @@ export class AddUserComponent implements OnInit {
             email: ngForm.form.value.email,
         });
 
-        this.userService.checkEmailUser(user.email).subscribe(
-            userExist => {
-                if (userExist.id == null) {
-                    this.userService.addUser(user).subscribe(userResponse => console.log(userResponse));
-                    setTimeout(() => this.router.navigateByUrl('/users'), 1000);
-                } else {
-                    this.displayStyle = 'block';
+        if (user.email === '' || user.firstName === '' || user.lastName === '' || user.age === ''){
+            this.displayNullField = 'block';
+        }
+        else {
+            this.userService.checkEmailUser(user.email).subscribe(
+                userExist => {
+                    if (userExist.id == null) {
+                        this.userService.addUser(user).subscribe(userResponse => console.log(userResponse));
+                        setTimeout(() => this.router.navigateByUrl('/users'), 1000);
+                    } else {
+                        this.displayEmailVerified = 'block';
+                    }
                 }
-            }
-        );
+            );
+        }
     }
 }

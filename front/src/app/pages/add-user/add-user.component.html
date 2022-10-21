@@ -18,7 +18,7 @@
           <label for="age">
             Age
           </label>
-          <input type="text" id="age" class="form-control" name="age" ngModel>
+          <input type="number" id="age" class="form-control" name="age" ngModel>
         </div>
         <div class="form-group">
           <label for="email">
@@ -26,8 +26,9 @@
           </label>
           <input type="text" id="email" class="form-control" name="email" ngModel>
         </div>
-        <label id="emailVerification" [ngStyle]="{'display':displayStyle}" > Email already exists.</label>
-        <button class="btn btn-primary" type="submit">Ajouter</button>
+        <label class="checkingField" [ngStyle]="{'display':displayEmailVerified}" > Email already exists. </label>
+        <label class="checkingField" [ngStyle]="{'display':displayNullField}" > Please complete all fields. </label>
+        <button class="btn btn-primary" type="submit">Add this user</button>
       </form>
     </div>
   </div>
