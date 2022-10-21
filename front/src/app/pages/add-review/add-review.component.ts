@@ -4,6 +4,9 @@ import {ReviewService} from '../../services/review.service';
 import {Router} from '@angular/router';
 import {Review} from '../../models/review.model';
 import {UserService} from '../../services/user.service';
+import {KittenService} from '../../services/kitten.service';
+import {DatePipe} from '@angular/common';
+
 
 @Component({
     selector: 'app-add-review',
@@ -12,7 +15,13 @@ import {UserService} from '../../services/user.service';
 })
 export class AddReviewComponent implements OnInit {
 
-    constructor(private reviewService: ReviewService, private router: Router, private userService: UserService) {
+    today = new Date();
+    pipe = new DatePipe('en-US');
+    ChangedFormat = this.pipe.transform(this.today, 'dd/MM/YYYY');
+    changedDate = this.ChangedFormat;
+
+    constructor(private reviewService: ReviewService, private router: Router, private userService: UserService,
+                private kittenService: KittenService) {
     }
 
     ngOnInit() {
@@ -20,14 +29,14 @@ export class AddReviewComponent implements OnInit {
 
     onSubmit(ngForm: NgForm) {
         console.log(ngForm);
-        const idUser = this.userService.userId;
+
         const newReview = new Review(
             null,
-            '12/03/2000',
+            this.changedDate,
             ngForm.form.value.rating,
             ngForm.form.value.text,
-            idUser,
-            4
+            this.userService.userId,
+            this.kittenService.kittenJudged.id
         );
 
         this.reviewService.addReview(newReview).subscribe(review => console.log(review));

@@ -31,17 +31,12 @@ export class HomeComponent implements OnInit {
             do {
                 randIndex = this.randNum();
                 idKitten = this.kittens[randIndex].id;
-            } while (idKitten == this.kittenPrint.id);
+            } while (idKitten === this.kittenPrint.id);
         } else {
             randIndex = this.randNum();
         }
-        //
-        // this.kittenService.getKitten(idKitten)
-        //     .subscribe(kitten => {
-        //         this.kittenPrint = kitten
-        //         console.log(this.kittenPrint);
-        //     });
         this.kittenPrint = this.kittens[randIndex];
+        this.kittenService.kittenJudged = this.kittens[randIndex];
     }
 
     randNum(): number {

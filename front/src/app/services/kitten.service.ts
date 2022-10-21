@@ -4,7 +4,6 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
-import { defaultsDeep } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +11,7 @@ import { defaultsDeep } from 'lodash';
 export class KittenService {
 
   private url: string;
+  kittenJudged: Kitten;
 
   constructor(private http: HttpClient) {
     this.url = environment.url;
