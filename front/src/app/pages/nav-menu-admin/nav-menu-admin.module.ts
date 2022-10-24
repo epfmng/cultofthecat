@@ -12,6 +12,7 @@ import {NavMenuAdminComponent} from './nav-menu-admin.component';
 import {NavMenuAdminRoutingModule} from './nav-menu-admin-routing.module';
 import {FormsModule} from '@angular/forms';
 import {HomeModule} from '../home/home.module';
+import {ListFilesComponent} from '../list-files/list-files.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {HomeModule} from '../home/home.module';
         ListKittensComponent,
         AddKittenComponent,
         ListReviewsComponent,
-        LoginComponent
+        LoginComponent,
+        ListFilesComponent
     ],
     imports: [
         BrowserModule,

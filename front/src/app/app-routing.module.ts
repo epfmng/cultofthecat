@@ -9,10 +9,10 @@ import {AddUserComponent} from './pages/add-user/add-user.component';
 import {ListKittensComponent} from './pages/list-kittens/list-kittens.component';
 import {AddKittenComponent} from './pages/add-kitten/add-kitten.component';
 import {ListReviewsComponent} from './pages/list-reviews/list-reviews.component';
+import {LoginComponent} from './pages/login/login.component';
 import {AddReviewComponent} from './pages/add-review/add-review.component';
 import {MyReviewsComponent} from './pages/my-reviews/my-reviews.component';
-import {LoginComponent} from './pages/login/login.component';
-
+import {ListFilesComponent} from './pages/list-files/list-files.component';
 
 
 const routes: Routes = [
@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'add-review', component: AddReviewComponent },
   { path: 'my-review', component: MyReviewsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'images', component: ListFilesComponent },
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@
       <th scope="col">Fur</th>
       <th scope="col">Race</th>
       <th scope="col">Age</th>
+      <th scope="col">ImagePath</th>
       <th scope="col">Image</th>
       <th scope="col">Sex</th>
       <th scope="col"></th>
@@ -20,6 +21,7 @@
       <td>{{kitten.race}}</td>
       <td>{{kitten.age}}</td>
       <td>{{kitten.imagepath}}</td>
+      <td><img class="logo" src="../assets/{{kitten.imagepath}}" height="300"/></td>
       <td>{{kitten.sex}}</td>
       <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(kitten.id)">Delete</button></td>
     </tr>
