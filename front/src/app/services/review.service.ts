@@ -20,6 +20,9 @@ export class ReviewService {
   getReviews(): Observable<Review[]> {
     return this.http.get<Review[]>(`${this.url}/reviews`).pipe(timeout(10000));
   }
+  getReviewsByUserId(id: number):Observable<Review[]> {
+    return this.http.get<Review[]>(`${this.url}/reviews/${id}`).pipe(timeout(10000));
+  }
 
   addReview(review: Review): Observable<Review> {
     return this.http.post<any>(`${this.url}/reviews`, review).pipe(timeout(10000));

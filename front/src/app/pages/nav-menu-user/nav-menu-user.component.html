@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" [routerLink]="['/list-review']">Review List</a>
+    <a class="navbar-brand" [routerLink]="['/my-review']">My reviews</a>
     <a class="navbar-brand" [routerLink]="['/add-review']">Add Review</a>
     <a class="navbar-brand" [routerLink]="['/login']">Login</a>
 </nav>
@@ -27,7 +27,7 @@
             <td>{{review.text}}</td>
             <td>{{review.userid}}</td>
             <td>{{review.kittenid}}</td>
-            <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteReview(review.id)">Delete</button></td>
+            <td><button type="button" class="btn btn-danger deleteButton" >Delete</button></td>
         </tr>
         </tbody>
     </table>
