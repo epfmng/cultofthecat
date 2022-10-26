@@ -24,7 +24,10 @@ export class AddReviewComponent implements OnInit {
                 private kittenService: KittenService) {
     }
 
+    kittenJudGedImage = '';
+
     ngOnInit() {
+        this.kittenJudGedImage = this.kittenService.kittenJudged.imagepath;
     }
 
     onSubmit(ngForm: NgForm) {
