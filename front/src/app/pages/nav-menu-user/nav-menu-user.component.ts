@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Review} from '../../models/review.model';
-import {ReviewService} from '../../services/review.service';
+import {Kitten} from '../../models/kitten.model';
+import {KittenService} from '../../services/kitten.service';
 
 @Component({
   selector: 'app-nav-menu-user',
@@ -10,18 +10,46 @@ import {ReviewService} from '../../services/review.service';
 
 export class NavMenuUserComponent implements OnInit {
 
-  reviews: Review[];
+  kittens: Kitten[];
+  kittenPrint: Kitten;
 
-  constructor(private reviewService: ReviewService) { }
-
-  ngOnInit() {
-    this.reviewService.getReviews().subscribe(reviews => this.reviews = reviews);
+  constructor(private kittenService: KittenService) {
   }
 
-  deleteReview(id: number) {
-    this.reviewService.deleteReview(id).subscribe(succes => {
-      this.reviews = this.reviews.filter(review => review.id !== id)
+  ngOnInit(): void {
+    this.kittenService.getKittens().subscribe(kittens => {
+      this.kittens = kittens;
+      console.log(this.kittens)
+      this.loadKitten();
     });
+  }
+
+
+  loadKitten(): void {
+    let idKitten
+    let randIndex = this.randNum()
+    if (this.kittenPrint != null) {
+      do {
+        randIndex = this.randNum();
+        idKitten = this.kittens[randIndex].id;
+      } while (idKitten === this.kittenPrint.id);
+    } else {
+      randIndex = this.randNum();
+    }
+    this.kittenPrint = this.kittens[randIndex];
+    this.kittenService.kittenJudged = this.kittens[randIndex];
+  }
+
+  randNum(): number {
+    let min = 0;
+    let max = this.kittens.length;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  nextKitten(): void {
+    this.loadKitten();
   }
 
 }
