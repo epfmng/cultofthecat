@@ -1,5 +1,3 @@
-import {defaultsDeep} from 'lodash';
-
 export class Review {
     id: number | null;
     date: string;
