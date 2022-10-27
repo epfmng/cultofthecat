@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
-import { defaultsDeep } from 'lodash';
+import {MyReview} from '../models/my-review.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class ReviewService {
   getReviews(): Observable<Review[]> {
     return this.http.get<Review[]>(`${this.url}/reviews`).pipe(timeout(10000));
   }
-  getReviewsByUserId(id: number):Observable<Review[]> {
-    return this.http.get<Review[]>(`${this.url}/reviews/${id}`).pipe(timeout(10000));
+  getReviewsByUserId(id: number):Observable<MyReview[]> {
+    return this.http.get<MyReview[]>(`${this.url}/reviews/${id}`).pipe(timeout(10000));
   }
 
   addReview(review: Review): Observable<Review> {
