@@ -30,3 +30,14 @@ INSERT INTO defaultdb.reviews (id, date, rating, text, userid, kittenid) VALUES 
 INSERT INTO defaultdb.reviews (id, date, rating, text, userid, kittenid) VALUES (8,  '01/09/2003',  3, 'black',            4,  4);
 INSERT INTO defaultdb.reviews (id, date, rating, text, userid, kittenid) VALUES (9,  '01/09/2003',  3, 'black and white',  5,  5);
 INSERT INTO defaultdb.reviews (id, date, rating, text, userid, kittenid) VALUES (10, '01/09/2003',  3, 'brown and black',  10, 10);
+
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (1,  '01/09/2003',  3, 'white',            1, 'kitten_1.jpg',  'kitten_1.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (2,  '01/09/2003',  3, 'white',            6, 'kitten_2.jpg',  'kitten_2.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (3,  '01/09/2003',  3, 'black',            7, 'kitten_3.jpg',  'kitten_3.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (4,  '01/09/2003',  3, 'brown',            8, 'kitten_4.jpg',  'kitten_4.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (5,  '01/09/2003',  3, 'yellow',           9, 'kitten_5.jpg',  'kitten_5.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (6,  '01/09/2003',  3, 'grey',             2, 'kitten_6.jpg',  'kitten_6.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (7,  '01/09/2003',  3, 'ginger',           3, 'kitten_7.jpg',  'kitten_7.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (8,  '01/09/2003',  3, 'black',            4, 'kitten_8.jpg',  'kitten_8.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (9,  '01/09/2003',  3, 'black and white',  5, 'kitten_9.jpg',  'kitten_9.jpg');
+INSERT INTO defaultdb.myreviews (id, date, rating, text, kittenid, kittenname, kittenimagepath) VALUES (10, '01/09/2003',  3, 'brown and black',  10, 'kitten_10.jpg', 'kitten_10.jpg');

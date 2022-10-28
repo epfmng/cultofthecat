@@ -36,3 +36,17 @@ create table reviews
     userid bigint null,
     kittenid bigint null
 );
+
+drop table myreviews;
+create table myreviews
+(
+    id bigint auto_increment,
+    constraint myreviews_pk
+        primary key (id),
+    date VARCHAR(255) not null,
+    rating int null,
+    text VARCHAR(255) not null,
+    kittenid bigint null,
+    kittenname VARCHAR(255) not null,
+    kittenimagepath VARCHAR(255) not null
+);
