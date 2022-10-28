@@ -1,7 +1,9 @@
-<div class="container">
+<div class="container p-2">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <img class="logo" src="../assets/{{kittenJudGedImage}}" height="300"/>
+            <div class="nav justify-content-center">
+            <img class="img-fluid" src="../assets/{{kittenJudGedImage}}" height="300" alt="{{kittenJudGedImage}}"/>
+            </div>
             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div class="form-group">
                     <label for="rating">
