@@ -6,7 +6,7 @@
 
 #content-home {
     background-color: white;
-    width: min-content;
+    width: max-content;
     padding-left: 50px;
     padding-right: 50px;
     border-radius: 5%;

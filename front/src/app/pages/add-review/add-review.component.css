@@ -1,0 +1,21 @@
+#background-content {
+    justify-content: center;
+    background-image: url("src/assets/background-cat-retouche.png");
+    background-repeat: repeat;
+    min-height: 660px;
+    background-attachment: scroll;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#content-home {
+    background-color: white;
+    width: fit-content;
+    border-radius: 5%;
+}
+
+.form-control {
+    min-width: 500px;
+    padding-right: 50px;
+    padding-left: 50px;
+}

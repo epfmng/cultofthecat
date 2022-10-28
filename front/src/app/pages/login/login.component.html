@@ -1,25 +1,23 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h2> Log In </h2>
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                <div class="form-group">
-                    <label for="email">
-                        Email
-                    </label>
-                    <input type="text" id="email" class="form-control" name="email" ngModel required>
-                </div>
-                <button class="btn btn-primary" type="submit">Connect</button>
-            </form>
-            <div
-                    class="modal"
-                    tabindex="-1"
-                    role="dialog"
-                    [ngStyle]="{'display':displayStyle}">
-                <div class="modal-dialog" role="dialog">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <p>Connexion sucess !</p>
+<div id="background-content">
+    <div class="container" id="content-home">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2> Log in </h2>
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label for="email">
+                            Write your email
+                        </label>
+                        <input type="text" id="email" class="form-control" name="email" ngModel required>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Connect</button>
+                </form>
+                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                    <div class="modal-dialog" role="dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p>Connexion sucess !</p>
+                            </div>
                         </div>
                     </div>
                 </div>

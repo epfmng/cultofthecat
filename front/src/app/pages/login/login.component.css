@@ -2,13 +2,19 @@
     display: flex;
     justify-content: center;
     background-image: url("src/assets/background-cat-retouche.png");
+    background-repeat: repeat;
+    min-height: 660px;
+    background-attachment: scroll;
 }
 
 #content-home {
     background-color: white;
-    width: max-content;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
     border-radius: 5%;
 }
 
+.form-control {
+    min-width: 500px;
+}

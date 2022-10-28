@@ -6,9 +6,11 @@
 
 #content-home {
     background-color: white;
-    width: max-content;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: fit-content;
+    padding: 50px;
     border-radius: 5%;
 }
 
+.form-control {
+    min-width: 500px;
+}

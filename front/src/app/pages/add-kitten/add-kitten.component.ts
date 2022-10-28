@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-add-kitten',
   templateUrl: './add-kitten.component.html',
-  styleUrls: ['./add-kitten.component.scss']
+  styleUrls: ['./add-kitten.component.css']
 })
 export class AddKittenComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class AddKittenComponent implements OnInit {
 
   onSubmit(ngForm: NgForm) {
     console.log(ngForm);
-    const kitten = defaultsDeep({
+    const newKitten = defaultsDeep({
       id: null,
       firstName: ngForm.form.value.firstName,
       fur: ngForm.form.value.fur,
@@ -28,7 +28,7 @@ export class AddKittenComponent implements OnInit {
       sex: ngForm.form.value.sex,
     });
 
-    this.kittenService.addKitten(kitten).subscribe(kitten => console.log(kitten));
+    this.kittenService.addKitten(newKitten).subscribe(kitten => console.log(kitten));
 
     setTimeout(()=>this.router.navigateByUrl('/kittens'), 1000)
   }

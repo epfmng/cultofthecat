@@ -1,35 +1,39 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="form-group">
-          <label for="firstName">
-            First Name
-          </label>
-          <input type="text" id="firstName" class="form-control" name="firstName" ngModel>
+<div id="background-content">
+    <div class="container" id="content-home">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label for="firstName">
+                            First Name
+                        </label>
+                        <input type="text" id="firstName" class="form-control" name="firstName" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">
+                            Last Name
+                        </label>
+                        <input type="text" id="lastName" class="form-control" name="lastName" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">
+                            Age
+                        </label>
+                        <input type="number" id="age" class="form-control" name="age" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input type="text" id="email" class="form-control" name="email" ngModel>
+                    </div>
+                    <label class="checkingField" [ngStyle]="{'display':displayEmailVerified}"> Email already
+                        exists. </label>
+                    <label class="checkingField" [ngStyle]="{'display':displayNullField}"> Please complete all
+                        fields. </label>
+                    <button class="btn btn-primary" type="submit">Add this user</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="lastName">
-            Last Name
-          </label>
-          <input type="text" id="lastName" class="form-control" name="lastName" ngModel>
-        </div>
-        <div class="form-group">
-          <label for="age">
-            Age
-          </label>
-          <input type="number" id="age" class="form-control" name="age" ngModel>
-        </div>
-        <div class="form-group">
-          <label for="email">
-            Email
-          </label>
-          <input type="text" id="email" class="form-control" name="email" ngModel>
-        </div>
-        <label class="checkingField" [ngStyle]="{'display':displayEmailVerified}" > Email already exists. </label>
-        <label class="checkingField" [ngStyle]="{'display':displayNullField}" > Please complete all fields. </label>
-        <button class="btn btn-primary" type="submit">Add this user</button>
-      </form>
     </div>
-  </div>
 </div>
