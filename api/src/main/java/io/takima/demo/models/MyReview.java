@@ -1,4 +1,5 @@
 package io.takima.demo.models;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -26,19 +27,18 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
 
     private Long kittenid;
 
-    private String kittenName;
+    private String kittenname;
 
-    private String kittenImagePath;
+    private String kittenimagepath;
 
-
-    public MyReview(Long id, String date, int rating, String text, Long kittenid, String kittenName, String kittenImagePath) {
+    public MyReview(Long id, String date, int rating, String text, Long kittenid, String kittenname, String kittenimagepath) {
         this.id = id;
         this.date = date;
         this.rating = rating;
         this.text = text;
         this.kittenid = kittenid;
-        this.kittenName = kittenName;
-        this.kittenImagePath = kittenImagePath;
+        this.kittenname = kittenname;
+        this.kittenimagepath = kittenimagepath;
     }
 
     public MyReview() {
@@ -84,25 +84,33 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
         this.kittenid = kittenid;
     }
 
-    public String getKittenName() { return kittenName; }
+    public String getKittenname() {
+        return kittenname;
+    }
 
-    public void setKittenName(String kittenName) { this.kittenName = kittenName; }
+    public void setKittenname(String kittenname) {
+        this.kittenname = kittenname;
+    }
 
-    public String getKittenImagePath() { return kittenImagePath; }
+    public String getKittenimagepath() {
+        return kittenimagepath;
+    }
 
-    public void setKittenImagePath(String kittenImagePath) { this.kittenImagePath = kittenImagePath; }
+    public void setKittenimagepath(String kittenimagepath) {
+        this.kittenimagepath = kittenimagepath;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MyReview myReview = (MyReview) o;
-        return rating == myReview.rating && Objects.equals(id, myReview.id) && Objects.equals(date, myReview.date) && Objects.equals(text, myReview.text) && Objects.equals(kittenid, myReview.kittenid) && Objects.equals(kittenName, myReview.kittenName) && Objects.equals(kittenImagePath, myReview.kittenImagePath);
+        return rating == myReview.rating && Objects.equals(id, myReview.id) && Objects.equals(date, myReview.date) && Objects.equals(text, myReview.text) && Objects.equals(kittenid, myReview.kittenid) && Objects.equals(kittenname, myReview.kittenname) && Objects.equals(kittenimagepath, myReview.kittenimagepath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, date, rating, text, kittenid, kittenName, kittenImagePath);
+        return Objects.hash(id, date, rating, text, kittenid, kittenname, kittenimagepath);
     }
 
     @Override
@@ -113,8 +121,8 @@ Les champs marqués de "@Column" correspondent aux colonnes de ta table.
                 ", rating=" + rating +
                 ", text='" + text + '\'' +
                 ", kittenid=" + kittenid +
-                ", kittenName='" + kittenName + '\'' +
-                ", kittenImagePath='" + kittenImagePath + '\'' +
+                ", kittenname='" + kittenname + '\'' +
+                ", kittenimagepath='" + kittenimagepath + '\'' +
                 '}';
     }
 }
