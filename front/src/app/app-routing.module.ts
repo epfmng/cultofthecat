@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 import {HomeComponent} from './pages/home/home.component';
 import {NavMenuAdminComponent} from './pages/nav-menu-admin/nav-menu-admin.component';
@@ -16,22 +16,23 @@ import {ListFilesComponent} from './pages/list-files/list-files.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'nav-menu-admin', component: NavMenuAdminComponent },
-  { path: 'nav-menu-user', component: NavMenuUserComponent },
-  { path: 'users', component: ListUsersComponent },
-  { path: 'add-user', component: AddUserComponent },
-  { path: 'kittens', component: ListKittensComponent },
-  { path: 'add-kitten', component: AddKittenComponent },
-  { path: 'list-review', component: ListReviewsComponent },
-  { path: 'add-review', component: AddReviewComponent },
-  { path: 'my-review', component: MyReviewsComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'images', component: ListFilesComponent },
+    {path: '', component: HomeComponent},
+    {path: 'nav-menu-admin', component: NavMenuAdminComponent},
+    {path: 'nav-menu-user', component: NavMenuUserComponent},
+    {path: 'users', component: ListUsersComponent},
+    {path: 'add-user', component: AddUserComponent},
+    {path: 'kittens', component: ListKittensComponent},
+    {path: 'add-kitten', component: AddKittenComponent},
+    {path: 'list-review', component: ListReviewsComponent},
+    {path: 'add-review', component: AddReviewComponent},
+    {path: 'my-review', component: MyReviewsComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'images', component: ListFilesComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

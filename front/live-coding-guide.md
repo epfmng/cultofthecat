@@ -8,6 +8,7 @@
 ## Ajouter la navbar à app component
 
 ## ListUsersComponent && AddUserComponent
+
 * Generate ListUsersComponent and AddUserComponent
 * Add routes to app routing ('', 'dashboard', '/add-user')
 * Add HTML && CSS

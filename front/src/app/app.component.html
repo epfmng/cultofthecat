@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a [routerLink]="['']">
-  <img class="logo" src="../assets/cat-icone-home.png"/>
-  </a>
-  <a class="navbar-brand" [routerLink]="['/nav-menu-admin']">Admin Panel</a>
-  <a class="navbar-brand" [routerLink]="['/nav-menu-user']">User Panel</a>
+    <a [routerLink]="['']">
+        <img class="logo" src="../assets/cat-icone-home.png"/>
+    </a>
+    <a [routerLink]="['/nav-menu-admin']" class="navbar-brand">Admin Panel</a>
+    <a [routerLink]="['/nav-menu-user']" class="navbar-brand">User Panel</a>
 </nav>
 
 <router-outlet></router-outlet>

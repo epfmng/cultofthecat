@@ -10,8 +10,8 @@ import {timeout} from 'rxjs/operators';
 })
 export class UserService {
 
-    private url: string;
     userId: number;
+    private url: string;
 
     constructor(private http: HttpClient) {
         this.url = environment.url;

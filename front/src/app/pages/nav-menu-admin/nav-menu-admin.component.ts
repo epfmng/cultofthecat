@@ -3,24 +3,25 @@ import {User} from '../../models/user.model';
 import {UserService} from '../../services/user.service';
 
 @Component({
-  selector: 'app-nav-menu-admin',
-  templateUrl: './nav-menu-admin.component.html',
-  styleUrls: ['./nav-menu-admin.component.css']
+    selector: 'app-nav-menu-admin',
+    templateUrl: './nav-menu-admin.component.html',
+    styleUrls: ['./nav-menu-admin.component.css']
 })
 
 export class NavMenuAdminComponent implements OnInit {
 
-  users: User[];
+    users: User[];
 
-  constructor(private userService: UserService) { }
+    constructor(private userService: UserService) {
+    }
 
-  ngOnInit() {
-    this.userService.getUsers().subscribe(users => this.users = users);
-  }
+    ngOnInit() {
+        this.userService.getUsers().subscribe(users => this.users = users);
+    }
 
-  deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(succes => {
-      this.users = this.users.filter(user => user.id !== id)
-    });
-  }
+    deleteUser(id: number) {
+        this.userService.deleteUser(id).subscribe(succes => {
+            this.users = this.users.filter(user => user.id !== id)
+        });
+    }
 }

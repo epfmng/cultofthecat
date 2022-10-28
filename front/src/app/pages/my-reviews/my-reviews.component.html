@@ -21,9 +21,9 @@
                     <td>{{review.rating}}</td>
                     <td>{{review.text}}</td>
                     <td>{{review.kittenname}}</td>
-                    <td><img src="../../../assets/{{review.kittenimagepath}}" height="300"/></td>
+                    <td><img height="300" src="../../../assets/{{review.kittenimagepath}}"/></td>
                     <td>
-                        <button type="button" class="btn btn-danger deleteButton" (click)="deleteReview(review.id)">
+                        <button (click)="deleteReview(review.id)" class="btn btn-danger deleteButton" type="button">
                             Delete
                         </button>
                     </td>

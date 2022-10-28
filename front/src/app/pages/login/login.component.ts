@@ -10,11 +10,11 @@ import {UserService} from '../../services/user.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-    constructor(private router: Router, private userService: UserService) {
-    }
-
     userLogged: User;
     displayStyle = 'none';
+
+    constructor(private router: Router, private userService: UserService) {
+    }
 
     ngOnInit() {
 

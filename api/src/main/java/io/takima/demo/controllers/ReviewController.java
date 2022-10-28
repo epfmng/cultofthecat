@@ -5,7 +5,6 @@ import io.takima.demo.dao.ReviewDAO;
 import io.takima.demo.models.Kitten;
 import io.takima.demo.models.MyReview;
 import io.takima.demo.models.Review;
-import net.bytebuddy.dynamic.DynamicType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -41,8 +40,8 @@ public class ReviewController {
         it.forEach(e -> reviews.add(e));
 
         List<Review> userReviews = new ArrayList<>();
-        for (Review review :reviews) {
-            if(review.getUserid() == id){
+        for (Review review : reviews) {
+            if (review.getUserid() == id) {
                 userReviews.add(review);
             }
         }
@@ -53,12 +52,12 @@ public class ReviewController {
 
         List<MyReview> userReviewsImage = new ArrayList<>();
 
-        for (Review review: userReviews) {
-            for (Kitten kitten: kittens) {
-                if(review.getKittenid() == kitten.getId()) {
-                   MyReview reviewImage = new MyReview(review.getId(), review.getDate(), review.getRating(),
-                           review.getText(), kitten.getId(), kitten.getFirstName(), kitten.getImagepath());
-                   userReviewsImage.add(reviewImage);
+        for (Review review : userReviews) {
+            for (Kitten kitten : kittens) {
+                if (review.getKittenid() == kitten.getId()) {
+                    MyReview reviewImage = new MyReview(review.getId(), review.getDate(), review.getRating(),
+                            review.getText(), kitten.getId(), kitten.getFirstName(), kitten.getImagepath());
+                    userReviewsImage.add(reviewImage);
                 }
             }
         }

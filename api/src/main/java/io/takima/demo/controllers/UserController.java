@@ -45,7 +45,7 @@ public class UserController {
 
         User userCheck = new User();
         for (User user : users) {
-            if(user.getEmail().equals(email)) {
+            if (user.getEmail().equals(email)) {
                 userCheck.setId(user.getId());
                 userCheck.setFirstName(user.getFirstName());
                 userCheck.setLastName(user.getLastName());

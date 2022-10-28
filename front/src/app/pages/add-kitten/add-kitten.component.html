@@ -2,42 +2,42 @@
     <div class="container" id="content-home">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                     <div class="form-group">
                         <label for="firstName">
                             First Name
                         </label>
-                        <input type="text" id="firstName" class="form-control" name="firstName" ngModel>
+                        <input class="form-control" id="firstName" name="firstName" ngModel type="text">
                     </div>
                     <div class="form-group">
                         <label for="fur">
                             Fur
                         </label>
-                        <input type="text" id="fur" class="form-control" name="fur" ngModel>
+                        <input class="form-control" id="fur" name="fur" ngModel type="text">
                     </div>
                     <div class="form-group">
                         <label for="race">
                             Race
                         </label>
-                        <input type="text" id="race" class="form-control" name="race" ngModel>
+                        <input class="form-control" id="race" name="race" ngModel type="text">
                     </div>
                     <div class="form-group">
                         <label for="age">
                             Age
                         </label>
-                        <input type="text" id="age" class="form-control" name="age" ngModel>
+                        <input class="form-control" id="age" name="age" ngModel type="text">
                     </div>
                     <div class="form-group">
                         <label for="imagepath">
                             Image
                         </label>
-                        <input type="text" id="imagepath" class="form-control" name="imagepath" ngModel>
+                        <input class="form-control" id="imagepath" name="imagepath" ngModel type="text">
                     </div>
                     <div class="form-group">
                         <label for="sex">
                             Sex
                         </label>
-                        <input type="text" id="sex" class="form-control" name="sex" ngModel>
+                        <input class="form-control" id="sex" name="sex" ngModel type="text">
                     </div>
                     <button class="btn btn-primary" type="submit">Ajouter</button>
                 </form>

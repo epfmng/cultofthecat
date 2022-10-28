@@ -1,6 +1,5 @@
 package io.takima.demo.models;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 public class MyReview {

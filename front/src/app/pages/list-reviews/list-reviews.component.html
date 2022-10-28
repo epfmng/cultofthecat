@@ -21,7 +21,7 @@
                 <td>{{review.userid}}</td>
                 <td>{{review.kittenid}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger deleteButton" (click)="deleteReview(review.id)">Delete
+                    <button (click)="deleteReview(review.id)" class="btn btn-danger deleteButton" type="button">Delete
                     </button>
                 </td>
             </tr>

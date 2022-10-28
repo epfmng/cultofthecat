@@ -29,8 +29,9 @@ export class MyReviewsComponent implements OnInit {
         if (this.userService.userId != null) {
             this.reviewService.getReviewsByUserId(this.userService.userId)
                 .subscribe(reviews => {
-                    this.myReviews = reviews,
-                    console.log('my reviews', this.myReviews)}
+                        this.myReviews = reviews,
+                            console.log('my reviews', this.myReviews)
+                    }
                 );
             this.userLogged = true;
         } else {

@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a [routerLink]="['']"></a>
-    <a class="navbar-brand" [routerLink]="['/users']">User List</a>
-    <a class="navbar-brand" [routerLink]="['/add-user']">Add User</a>
-    <a class="navbar-brand" [routerLink]="['/kittens']">Kitten List</a>
-    <a class="navbar-brand" [routerLink]="['/add-kitten']">Add Kitten</a>
-    <a class="navbar-brand" [routerLink]="['/list-review']">Review List</a>
-    <a class="navbar-brand" [routerLink]="['/login']">Login</a>
-    <a class="navbar-brand" [routerLink]="['/images']">List File</a>
+    <a [routerLink]="['/users']" class="navbar-brand">User List</a>
+    <a [routerLink]="['/add-user']" class="navbar-brand">Add User</a>
+    <a [routerLink]="['/kittens']" class="navbar-brand">Kitten List</a>
+    <a [routerLink]="['/add-kitten']" class="navbar-brand">Add Kitten</a>
+    <a [routerLink]="['/list-review']" class="navbar-brand">Review List</a>
+    <a [routerLink]="['/login']" class="navbar-brand">Login</a>
+    <a [routerLink]="['/images']" class="navbar-brand">List File</a>
 </nav>
 
 <router-outlet></router-outlet>
@@ -32,7 +32,7 @@
                 <td>{{user.age}}</td>
                 <td>{{user.email}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(user.id)">Delete
+                    <button (click)="deleteUser(user.id)" class="btn btn-danger deleteButton" type="button">Delete
                     </button>
                 </td>
             </tr>

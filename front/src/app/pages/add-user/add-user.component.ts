@@ -11,11 +11,11 @@ import {Router} from '@angular/router';
 })
 export class AddUserComponent implements OnInit {
 
-    constructor(private userService: UserService, private router: Router) {
-    }
-
     displayEmailVerified = 'none';
     displayNullField = 'none';
+
+    constructor(private userService: UserService, private router: Router) {
+    }
 
     ngOnInit() {
     }
@@ -31,10 +31,9 @@ export class AddUserComponent implements OnInit {
             email: ngForm.form.value.email,
         });
 
-        if (user.email === '' || user.firstName === '' || user.lastName === '' || user.age === ''){
+        if (user.email === '' || user.firstName === '' || user.lastName === '' || user.age === '') {
             this.displayNullField = 'block';
-        }
-        else {
+        } else {
             this.userService.checkEmailUser(user.email).subscribe(
                 userExist => {
                     if (userExist.id == null) {

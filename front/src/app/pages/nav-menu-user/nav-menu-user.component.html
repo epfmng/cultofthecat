@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" [routerLink]="['/my-review']">My reviews</a>
-    <a class="navbar-brand" [routerLink]="['/add-review']">Add Review</a>
-    <a class="navbar-brand" [routerLink]="['/login']">Login</a>
+    <a [routerLink]="['/my-review']" class="navbar-brand">My reviews</a>
+    <a [routerLink]="['/add-review']" class="navbar-brand">Add Review</a>
+    <a [routerLink]="['/login']" class="navbar-brand">Login</a>
 </nav>
 
 <router-outlet></router-outlet>
@@ -11,8 +11,8 @@
     <div id="content-home">
         <h1 class="text-lg-center p-2">{{kittenPrint.firstName}}</h1>
         <div class="nav justify-content-center">
-            <img class=figure-img src="../assets/{{kittenPrint.imagepath}}" alt="{{kittenPrint.firstName}}"
-                 height="400">
+            <img alt="{{kittenPrint.firstName}}" class=figure-img height="400"
+                 src="../assets/{{kittenPrint.imagepath}}">
         </div>
         <div class="nav justify-content-center">
             <hr>
@@ -27,7 +27,7 @@
                 <button class="btn-outline-primary btn-lg" routerLink="/add-review">Judge the kitten</button>
             </li>
             <li class="nav-item p-5">
-                <button class="btn-outline-secondary btn-lg" (click)="nextKitten()">Boring next</button>
+                <button (click)="nextKitten()" class="btn-outline-secondary btn-lg">Boring next</button>
             </li>
         </ul>
     </div>

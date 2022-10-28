@@ -19,13 +19,12 @@ export class AddReviewComponent implements OnInit {
     pipe = new DatePipe('en-US');
     ChangedFormat = this.pipe.transform(this.today, 'dd/MM/YYYY');
     changedDate = this.ChangedFormat;
+    kittenJudGedImage = '';
+    displayUserLogged = 'none';
 
     constructor(private reviewService: ReviewService, private router: Router, private userService: UserService,
                 private kittenService: KittenService) {
     }
-
-    kittenJudGedImage = '';
-    displayUserLogged = 'none';
 
     ngOnInit() {
         this.kittenJudGedImage = this.kittenService.kittenJudged.imagepath;
@@ -34,7 +33,7 @@ export class AddReviewComponent implements OnInit {
     onSubmit(ngForm: NgForm) {
         console.log(ngForm);
 
-        if(this.userService.userId != null) {
+        if (this.userService.userId != null) {
             const newReview = new Review(
                 null,
                 this.changedDate,
@@ -47,8 +46,7 @@ export class AddReviewComponent implements OnInit {
             this.reviewService.addReview(newReview).subscribe(review => console.log(review));
 
             setTimeout(() => this.router.navigateByUrl('/'), 1000)
-        }
-        else {
+        } else {
             this.displayUserLogged = 'block';
         }
     }

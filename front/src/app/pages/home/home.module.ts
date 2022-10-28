@@ -1,13 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {HomeRoutingModule} from './home-routing.module';
 import {HomeComponent} from './home.component';
 
 @NgModule({
-    declarations: [
-    ],
+    declarations: [],
     imports: [
         BrowserModule,
         HomeRoutingModule,
@@ -16,4 +15,5 @@ import {HomeComponent} from './home.component';
     providers: [],
     bootstrap: [HomeComponent]
 })
-export class HomeModule { }
+export class HomeModule {
+}

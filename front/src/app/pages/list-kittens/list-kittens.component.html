@@ -22,10 +22,10 @@
                 <td>{{kitten.race}}</td>
                 <td>{{kitten.age}}</td>
                 <td>{{kitten.imagepath}}</td>
-                <td><img class="logo" src="../assets/{{kitten.imagepath}}" height="300"/></td>
+                <td><img class="logo" height="300" src="../assets/{{kitten.imagepath}}"/></td>
                 <td>{{kitten.sex}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger deleteButton" (click)="deleteUser(kitten.id)">Delete
+                    <button (click)="deleteUser(kitten.id)" class="btn btn-danger deleteButton" type="button">Delete
                     </button>
                 </td>
             </tr>
