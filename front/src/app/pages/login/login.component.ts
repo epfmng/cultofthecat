@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {LoginService} from '../../services/login.service';
 import {Router} from '@angular/router';
 import {User} from '../../models/user.model';
 import {UserService} from '../../services/user.service';
@@ -11,7 +10,7 @@ import {UserService} from '../../services/user.service';
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-    constructor(private loginService: LoginService, private router: Router, private userService: UserService) {
+    constructor(private router: Router, private userService: UserService) {
     }
 
     userLogged: User;
