@@ -1,0 +1,10 @@
+#background-content {
+  background-image: url("src/assets/background-cat-retouche.png");
+  background-repeat: repeat;
+  min-height: 660px;
+  background-attachment: scroll;
+}
+
+.container {
+  background-color: white;
+}

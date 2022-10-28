@@ -5,7 +5,7 @@ import {KittenService} from '../../services/kitten.service';
 @Component({
   selector: 'app-list-kittens',
   templateUrl: './list-kittens.component.html',
-  styleUrls: ['./list-kittens.component.scss']
+  styleUrls: ['./list-kittens.component.css']
 })
 export class ListKittensComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import {UserService} from '../../services/user.service';
 @Component({
   selector: 'app-nav-menu-admin',
   templateUrl: './nav-menu-admin.component.html',
-  styleUrls: ['./nav-menu-admin.component.scss']
+  styleUrls: ['./nav-menu-admin.component.css']
 })
 
 export class NavMenuAdminComponent implements OnInit {

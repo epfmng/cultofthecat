@@ -1,33 +1,36 @@
-<div class="container">
-    <div *ngIf="!userLogged">
-        <label> You need to be log to see your reviews. </label>
-    </div>
-    <div *ngIf="userLogged">
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="thead">
-            <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Rating</th>
-                <th scope="col">Text</th>
-                <th scope="col">Kitten firstname</th>
-                <th scope="col">Kitten image</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let review of myReviews">
-                <td>{{review.date}}</td>
-                <td>{{review.rating}}</td>
-                <td>{{review.text}}</td>
-                <td>{{review.kittenname}}</td>
-                <td><img src="../../../assets/{{review.kittenimagepath}}" height="300"/></td>
-                <td>
-                    <button type="button" class="btn btn-danger deleteButton" (click)="deleteReview(review.id)">Delete
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+<div id="background-content">
+    <div class="container">
+        <div *ngIf="!userLogged">
+            <label> You need to be log to see your reviews. </label>
+        </div>
+        <div *ngIf="userLogged">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead">
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Text</th>
+                    <th scope="col">Kitten firstname</th>
+                    <th scope="col">Kitten image</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let review of myReviews">
+                    <td>{{review.date}}</td>
+                    <td>{{review.rating}}</td>
+                    <td>{{review.text}}</td>
+                    <td>{{review.kittenname}}</td>
+                    <td><img src="../../../assets/{{review.kittenimagepath}}" height="300"/></td>
+                    <td>
+                        <button type="button" class="btn btn-danger deleteButton" (click)="deleteReview(review.id)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

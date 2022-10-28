@@ -7,26 +7,29 @@
 <router-outlet></router-outlet>
 
 <ng-container *ngIf="kittenPrint">
-    <body class="p-2">
-    <h1 class="text-lg-center p-2">{{kittenPrint.firstName}}</h1>
-    <div class="nav justify-content-center">
-        <img class=figure-img src="../assets/{{kittenPrint.imagepath}}" alt="{{kittenPrint.firstName}}" height="400">
+    <body class="p-2" id="background-content">
+    <div id="content-home">
+        <h1 class="text-lg-center p-2">{{kittenPrint.firstName}}</h1>
+        <div class="nav justify-content-center">
+            <img class=figure-img src="../assets/{{kittenPrint.imagepath}}" alt="{{kittenPrint.firstName}}"
+                 height="400">
+        </div>
+        <div class="nav justify-content-center">
+            <hr>
+            <li class="nav-item p-2"><b>Race : </b>{{kittenPrint.race}}</li>
+            <li class="nav-item p-2"><b>Sex : </b>{{kittenPrint.sex}}</li>
+            <li class="nav-item p-2"><b>Fourrure : </b>{{kittenPrint.fur}}</li>
+            <li class="nav-item p-2"><b>Age : </b>{{kittenPrint.age}}</li>
+            <hr>
+        </div>
+        <ul class="nav justify-content-center">
+            <li class="nav-item p-5">
+                <button class="btn-outline-primary btn-lg" routerLink="/add-review">Judge the kitten</button>
+            </li>
+            <li class="nav-item p-5">
+                <button class="btn-outline-secondary btn-lg" (click)="nextKitten()">Boring next</button>
+            </li>
+        </ul>
     </div>
-    <div class="nav justify-content-center">
-        <hr>
-        <li class="nav-item p-2"><b>Race : </b>{{kittenPrint.race}}</li>
-        <li class="nav-item p-2"><b>Sex : </b>{{kittenPrint.sex}}</li>
-        <li class="nav-item p-2"><b>Fourrure : </b>{{kittenPrint.fur}}</li>
-        <li class="nav-item p-2"><b>Age : </b>{{kittenPrint.age}}</li>
-        <hr>
-    </div>
-    <ul class="nav justify-content-center">
-        <li class="nav-item p-5">
-            <button class="btn-outline-primary btn-lg" routerLink="/add-review">Judge the kitten</button>
-        </li>
-        <li class="nav-item p-5">
-            <button class="btn-outline-secondary btn-lg" (click)="nextKitten()">Boring next</button>
-        </li>
-    </ul>
     </body>
 </ng-container>

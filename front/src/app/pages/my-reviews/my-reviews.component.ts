@@ -8,7 +8,7 @@ import {KittenService} from '../../services/kitten.service';
 @Component({
     selector: 'app-my-reviews',
     templateUrl: './my-reviews.component.html',
-    styleUrls: ['./my-reviews.component.scss']
+    styleUrls: ['./my-reviews.component.css']
 })
 export class MyReviewsComponent implements OnInit {
 

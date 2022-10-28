@@ -5,7 +5,7 @@ import {KittenService} from '../../services/kitten.service';
 @Component({
   selector: 'app-nav-menu-user',
   templateUrl: './nav-menu-user.component.html',
-  styleUrls: ['./nav-menu-user.component.scss']
+  styleUrls: ['./nav-menu-user.component.css']
 })
 
 export class NavMenuUserComponent implements OnInit {
