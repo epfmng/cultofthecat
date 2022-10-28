@@ -25,6 +25,7 @@ export class AddReviewComponent implements OnInit {
     }
 
     kittenJudGedImage = '';
+    displayUserLogged = 'none';
 
     ngOnInit() {
         this.kittenJudGedImage = this.kittenService.kittenJudged.imagepath;
@@ -33,17 +34,22 @@ export class AddReviewComponent implements OnInit {
     onSubmit(ngForm: NgForm) {
         console.log(ngForm);
 
-        const newReview = new Review(
-            null,
-            this.changedDate,
-            ngForm.form.value.rating,
-            ngForm.form.value.text,
-            this.userService.userId,
-            this.kittenService.kittenJudged.id
-        );
+        if(this.userService.userId != null) {
+            const newReview = new Review(
+                null,
+                this.changedDate,
+                ngForm.form.value.rating,
+                ngForm.form.value.text,
+                this.userService.userId,
+                this.kittenService.kittenJudged.id
+            );
 
-        this.reviewService.addReview(newReview).subscribe(review => console.log(review));
+            this.reviewService.addReview(newReview).subscribe(review => console.log(review));
 
-        setTimeout(() => this.router.navigateByUrl('/'), 1000)
+            setTimeout(() => this.router.navigateByUrl('/'), 1000)
+        }
+        else {
+            this.displayUserLogged = 'block';
+        }
     }
 }
