@@ -1,0 +1,45 @@
+version: "3.1"
+services:
+  app:
+    image: app
+    build:
+      context: api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    networks:
+      - net
+
+  db:
+    image: postgres:alpine3.16
+    environment:
+      POSTGRES_DB: ${PG_DATABASE}
+      POSTGRES_USER: ${PG_DATABASE_USER}
+      POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./api/initdb:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - net
+    restart: unless-stopped
+
+  front:
+    image: front
+    build:
+      context: front
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - net
+
+networks:
+  net:
+volumes:
+  db-data:

@@ -1,0 +1,79 @@
+version: "3.9"
+services:
+  app:
+    image: app
+    build:
+      context: api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure
+    networks:
+      - net
+#  db:
+#    image: mariadb
+#    networks:
+#      - net
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#      MYSQL_DATABASE: ${DATABASE}
+#    volumes:
+#      - type: volume
+#        source: db-data
+#        target: /var/lib/mysql
+#      - type: bind
+#        source: ./api/initdb
+#        target: /docker-entrypoint-initdb.d
+#        read_only: true
+#    restart: unless-stopped
+#    ports:
+#      - "3306:3306"
+#    healthcheck:
+#      test: [ "CMD", "mysqladmin", "ping", "--silent" ]
+#      interval: 5s
+#      timeout: 2s
+#      retries: 10
+
+  db:
+    image: postgres:alpine3.16
+    environment:
+      POSTGRES_DB: ${PG_DATABASE}
+      POSTGRES_USER: ${PG_DATABASE_USER}
+      POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD}
+    volumes:
+      - type: volume
+        source: db-data
+        target: /var/lib/mysql
+      - type: bind
+        source: ./api/initdb
+        target: /docker-entrypoint-initdb.d
+        read_only: true
+    ports:
+      - "5432:5432"
+    networks:
+      - net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 2s
+      retries: 10
+
+  front:
+    image: front
+    build:
+      context: front
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - net
+
+networks:
+  net:
+volumes:
+  db-data:
