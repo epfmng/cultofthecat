@@ -34,7 +34,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 #scp root@192.168.239.153 /Desktop/docker-compose.yml  /wordpress
 #docker compose up
 
-git clone https://github.com/epfmng/cultofthecat.git
 cd cultofthecat
 docker compose down -v
 docker compose up db app -d
