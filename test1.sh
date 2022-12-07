@@ -1,43 +1,25 @@
-sudo apt install net-tools
-sudo apt-get install update
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install openssh-server
+sudo apt install net-tools -y
+sudo apt-get install update -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install openssh-server -y
 systemctl enable ssh
-sudo apt-get install vim
-sudo apt-get install nano
-sudo apt install bash 
+sudo apt-get install vim -y
+sudo apt-get install nano-y
+sudo apt install bash -y
 
-sudo apt-get update
 sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release
+    lsb-release \
+    -y
  
 sudo mkdir -p /etc/apt/keyrings
-#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-#echo \
-#  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-#  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-#sudo docker run hello-world
-
-#sudo apt-get install nodejs
-#sudo apt-get install npm
-#sudo apt-get install ng-common
-#sudo npm install -g @angular/cli --force && sudo npm install --save-dev @angular-devkit/build-angular
-#npm cache clean --force & npm uninstall -g angular-cli --force && sudo npm install -g @angular/cli --force && ng --help
-
-#mkdir ~/wordpress
-#scp root@192.168.239.153 /Desktop/docker-compose.yml  /wordpress
-#docker compose up
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
 rm -r cultofthecat
 git clone https://github.com/epfmng/cultofthecat.git
 cd cultofthecat
 docker compose down -v
 docker compose up db app -d
-#npm install
-#ng serve
